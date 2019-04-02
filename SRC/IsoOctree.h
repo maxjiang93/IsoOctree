@@ -107,14 +107,14 @@ class IsoOctree
 	long long getRootKey(const typename OctNode<NodeData,Real>::NodeIndex& nIdx,const int& edgeIndex);
 
 	int getRootPair(const RootInfo& root,const int& maxDepth,RootInfo& pair);
-	void getIsoFaceEdges(OctNode<NodeData,Real>* node,const typename OctNode<NodeData,Real>::NodeIndex& nIdx,const int& faceIndex,std::vector<std::pair<RootInfo,RootInfo>>& edges,const int& flip,const int& useFull);
-	void getIsoPolygons(OctNode<NodeData,Real>* node,const typename OctNode<NodeData,Real>::NodeIndex& nIdx,stdext::hash_map<long long,int>& roots,std::vector<std::vector<int>>& polygons,const int& useFull);
+	void getIsoFaceEdges(OctNode<NodeData,Real>* node,const typename OctNode<NodeData,Real>::NodeIndex& nIdx,const int& faceIndex,std::vector<std::pair<RootInfo,RootInfo> >& edges,const int& flip,const int& useFull);
+	void getIsoPolygons(OctNode<NodeData,Real>* node,const typename OctNode<NodeData,Real>::NodeIndex& nIdx,stdext::hash_map<long long,int>& roots,std::vector<std::vector<int> >& polygons,const int& useFull);
 
 	template<class C>
-	void getEdgeLoops(std::vector<std::pair<C,C> >& edges,stdext::hash_map<C,int>& roots,std::vector<std::vector<int>>& polygons);
+	void getEdgeLoops(std::vector<std::pair<C,C> >& edges,stdext::hash_map<C,int>& roots,std::vector<std::vector<int> >& polygons);
 
 	template<class C>
-	void getEdgeLoops(std::vector<std::pair<C,C> >& edges,std::vector<std::vector<C>>& loops);
+	void getEdgeLoops(std::vector<std::pair<C,C> >& edges,std::vector<std::vector<C> >& loops);
 
 	template<class MeshReal>
 	void setDistanceAndNormal(const std::vector<int>& triangles,MeshInfo<MeshReal>& mInfo,const Point3D<Real>& p,	Real& v,Point3D<Real>& n);
@@ -157,15 +157,15 @@ public:
 
 	// Extracts an iso-surface from the octree
 	template<class Vertex>
-	void getIsoSurface(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int>>& polygons,const int& useFull);
+	void getIsoSurface(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int> >& polygons,const int& useFull);
 	template<class Vertex>
-	void getIsoSoup(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int>>& polygons,const int& useFull);
+	void getIsoSoup(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int> >& polygons,const int& useFull);
 	template<class Vertex>
-	void getDualIsoSurface(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int>>& polygons,const int& useFull);
+	void getDualIsoSurface(const Real& isoValue,std::vector<Vertex>& vertices,std::vector<std::vector<int> >& polygons,const int& useFull);
 	// Generates a hash-table indexed by octree node, with each entry containing two pieces of data. The first is
 	// mean-curvature vector associated to the intersection of the iso-surface with the node. The second is the area
 	// of the intersection of the iso-surface with the node.
-	void setNormalFlatness(const Real& isoValue,stdext::hash_map<long long,std::pair<Point3D<Real>,Real>>& curvature);
+	void setNormalFlatness(const Real& isoValue,stdext::hash_map<long long,std::pair<Point3D<Real>,Real> >& curvature);
 
 	// A method for determing if a node has grand-children along an edge
 	static int HasEdgeGrandChildren(const OctNode<NodeData,Real>* node,int eIndex);

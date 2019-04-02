@@ -1150,7 +1150,7 @@ int IsoOctree<NodeData,Real,VertexData>::getRootPair(const RootInfo& ri,const in
 template<class NodeData,class Real,class VertexData>
 void IsoOctree<NodeData,Real,VertexData>::getIsoFaceEdges(OctNode<NodeData,Real>* node,
 														  const typename OctNode<NodeData,Real>::NodeIndex& nIdx,
-														  const int& faceIndex,std::vector<std::pair<RootInfo,RootInfo>>& edges,const int& flip,const int& useFull)
+														  const int& faceIndex,std::vector<std::pair<RootInfo,RootInfo> >& edges,const int& flip,const int& useFull)
 {
 	int c1,c2,c3,c4;
 	if(node->children)
@@ -1192,7 +1192,7 @@ template<class NodeData,class Real,class VertexData>
 void IsoOctree<NodeData,Real,VertexData>::getIsoPolygons(OctNode<NodeData,Real>* node,
 														 const typename OctNode<NodeData,Real>::NodeIndex& nIdx,
 														 stdext::hash_map<long long,int>& roots,
-														 std::vector<std::vector<int>>& polygons,
+														 std::vector<std::vector<int> >& polygons,
 														 const int& useFull)
 {
 	std::vector<std::pair<long long,long long> > edges;
@@ -1335,9 +1335,9 @@ void IsoOctree<NodeData,Real,VertexData>::getIsoPolygons(OctNode<NodeData,Real>*
 }
 template<class NodeData,class Real,class VertexData>
 template<class C>
-void IsoOctree<NodeData,Real,VertexData>::getEdgeLoops(std::vector<std::pair<C,C>>& edges,
+void IsoOctree<NodeData,Real,VertexData>::getEdgeLoops(std::vector<std::pair<C,C> >& edges,
 													   stdext::hash_map<C,int>& roots,
-													   std::vector<std::vector<int>>& polygons)
+													   std::vector<std::vector<int> >& polygons)
 {
 	size_t polygonSize=polygons.size();
 	C frontIdx,backIdx;
@@ -1382,8 +1382,8 @@ void IsoOctree<NodeData,Real,VertexData>::getEdgeLoops(std::vector<std::pair<C,C
 }
 template<class NodeData,class Real,class VertexData>
 template<class C>
-void IsoOctree<NodeData,Real,VertexData>::getEdgeLoops(std::vector<std::pair<C,C>>& edges,
-													   std::vector<std::vector<C>>& polygons)
+void IsoOctree<NodeData,Real,VertexData>::getEdgeLoops(std::vector<std::pair<C,C> >& edges,
+													   std::vector<std::vector<C> >& polygons)
 {
 	int polygonSize=polygons.size();
 	C frontIdx,backIdx;
@@ -1475,7 +1475,7 @@ template<class NodeData,class Real,class VertexData>
 template<class Vertex>
 void IsoOctree<NodeData,Real,VertexData>::getDualIsoSurface(const Real& isoValue,
 															std::vector<Vertex>& vertices,
-															std::vector<std::vector<int>>& polygons,
+															std::vector<std::vector<int> >& polygons,
 															const int& useFull)
 {
 	OctNode<NodeData,Real>* temp;
@@ -1560,7 +1560,7 @@ template<class NodeData,class Real,class VertexData>
 template<class Vertex>
 void IsoOctree<NodeData,Real,VertexData>::getIsoSurface(const Real& isoValue,
 														std::vector<Vertex>& vertices,
-														std::vector<std::vector<int>>& polygons,
+														std::vector<std::vector<int> >& polygons,
 														const int& useFull)
 {
 	OctNode<NodeData,Real>* temp;
@@ -1583,7 +1583,7 @@ template<class NodeData,class Real,class VertexData>
 template<class Vertex>
 void IsoOctree<NodeData,Real,VertexData>::getIsoSoup(const Real& isoValue,
 													 std::vector<Vertex>& vertices,
-													 std::vector<std::vector<int>>& polygons,
+													 std::vector<std::vector<int> >& polygons,
 													 const int& useFull)
 {
 	OctNode<NodeData,Real>* temp;
@@ -1615,7 +1615,7 @@ void IsoOctree<NodeData,Real,VertexData>::getIsoSoup(const Real& isoValue,
 }
 
 template<class NodeData,class Real,class VertexData>
-void IsoOctree<NodeData,Real,VertexData>::setNormalFlatness(const Real& isoValue,stdext::hash_map<long long,std::pair<Point3D<Real>,Real>>& flatness)
+void IsoOctree<NodeData,Real,VertexData>::setNormalFlatness(const Real& isoValue,stdext::hash_map<long long,std::pair<Point3D<Real>,Real> >& flatness)
 {
 	OctNode<NodeData,Real>* temp;
 	stdext::hash_map<long long,int> roots;
