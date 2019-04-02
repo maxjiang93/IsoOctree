@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.6)
+project(IsoOctree)
+include_directories("${PROJECT_SOURCE_DIR}/SRC")
+file(GLOB SOURCES "SRC/*.cpp")
+add_executable(IsoOctree ${SOURCES})
