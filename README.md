@@ -1,5 +1,5 @@
 # IsoOctree
-IsoOctree (Unix Port for Misha Kazhdan's original)
+Unconstrained Isosurface Extraction on Arbitrary Octrees (Unix Port for Misha Kazhdan's original Windows implementation)
 
 ## About the code
 This is a port for Misha Kazhdan's original [IsoOctree](http://www.cs.jhu.edu/~misha/Code/IsoOctree/) code from Windows. Some Windows based C++ standard functions are swapped out, and a CMake file is provided. 
@@ -24,7 +24,7 @@ The code provides an implementation of the isosurface extraction in the context 
 
 ### Executable Arguments
 --**in** *<input mesh>*  
-      This string is the name of the file containing the mesh used to bulid the Euclidean Distance Transform. The mesh is assumed to be in the PLY format.  
+&nbsp; &nbsp; &nbsp;This string is the name of the file containing the mesh used to bulid the Euclidean Distance Transform. The mesh is assumed to be in the PLY format.  
 --**out** *<output mesh>*  
       This string is the name of the file to which the extracted isosurface will be written. The mesh will be written in the PLY format.  
 --**maxDepth** <*octree depth*>  
