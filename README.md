@@ -25,7 +25,7 @@ The code provides an implementation of the isosurface extraction in the context 
 ### Executable Arguments
 --**in** <*input mesh*>  
 &nbsp; &nbsp; &nbsp; &nbsp; This string is the name of the file containing the mesh used to bulid the Euclidean Distance Transform. The mesh is assumed to be in the PLY format.  
---**out** <*output mesh* > 
+--**out** <*output mesh* >  
 &nbsp; &nbsp; &nbsp; &nbsp; This string is the name of the file to which the extracted isosurface will be written. The mesh will be written in the PLY format.  
 --**maxDepth** <*octree depth*>  
 &nbsp; &nbsp; &nbsp; &nbsp; This integer is the maximum depth of the octree used to sample the Euclidean Distance Transform of the input mesh.  
