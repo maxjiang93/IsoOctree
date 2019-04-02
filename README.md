@@ -23,20 +23,20 @@ The code provides an implementation of the isosurface extraction in the context 
 **Note**: The construction of the EDT assumes that the input mesh is watertight with properly oriented triangles. In the case that these conditions are not satisfied (and sometimes even if they are) spurious disconnected surface patches may be generated.
 
 ### Executable Arguments
---**in** *<input mesh>*  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This string is the name of the file containing the mesh used to bulid the Euclidean Distance Transform. The mesh is assumed to be in the PLY format.  
---**out** *<output mesh>*  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This string is the name of the file to which the extracted isosurface will be written. The mesh will be written in the PLY format.  
+--**in** <*input mesh*>  
+&nbsp; &nbsp; &nbsp; &nbsp; This string is the name of the file containing the mesh used to bulid the Euclidean Distance Transform. The mesh is assumed to be in the PLY format.  
+--**out** <*output mesh* > 
+&nbsp; &nbsp; &nbsp; This string is the name of the file to which the extracted isosurface will be written. The mesh will be written in the PLY format.  
 --**maxDepth** <*octree depth*>  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This integer is the maximum depth of the octree used to sample the Euclidean Distance Transform of the input mesh.  
+&nbsp; &nbsp; &nbsp; &nbsp; This integer is the maximum depth of the octree used to sample the Euclidean Distance Transform of the input mesh.  
 [--**curvature** <*cut-off value*>]  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This floating point value represents the cut-off used for determining if the octree is to be refined.  
+&nbsp; &nbsp; &nbsp; &nbsp; This floating point value represents the cut-off used for determining if the octree is to be refined.  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (In practice, a cut-off value of about 0.99 does a good job of generating an adaptively sampled Euclidean Distance Transform that results in a simplified model with coarser triangles in flatter regions and finer triangles in regions of high-detail.)  
 [--**conforming**]  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the octree sampling the Euclidean Distance Transform will be forced to satisfy the condtion that the depth-disparity between face-adjacent leaf nodes is never greater than one.  
+&nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the octree sampling the Euclidean Distance Transform will be forced to satisfy the condtion that the depth-disparity between face-adjacent leaf nodes is never greater than one.  
 [--**fullCaseTable**]  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the ambiguous Marching-Cubes cases are dis-ambiguated by assigning a value to the center of a face equal to the average of the corners.  
+&nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the ambiguous Marching-Cubes cases are dis-ambiguated by assigning a value to the center of a face equal to the average of the corners.  
 [--**triangleMesh**]  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the minimal area triangulation is used to triangulate the polygons making up the isosurface.   
+&nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified, the minimal area triangulation is used to triangulate the polygons making up the isosurface.   
 [--**dual**]  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified the primal/dual method of [Schaeffer and Warren 04](https://www.cs.rice.edu/~jwarren/papers/dmc.pdf) is used to compute the isosurface, sampling the Euclidean Distance Transform at the centers of octree leaf-nodes rather than the corners.  
+&nbsp; &nbsp; &nbsp; &nbsp; If this argument is specified the primal/dual method of [Schaeffer and Warren 04](https://www.cs.rice.edu/~jwarren/papers/dmc.pdf) is used to compute the isosurface, sampling the Euclidean Distance Transform at the centers of octree leaf-nodes rather than the corners.  
