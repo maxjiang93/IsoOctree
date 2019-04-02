@@ -124,5 +124,5 @@ public:
 	static int HasRoots(const int& mcIndex);
 	static int HasEdgeRoots(const int& mcIndex,const int& edgeIndex);
 };
-// #include "MarchingCubes.inl"
+#include "MarchingCubes.inl"
 #endif //MARCHING_CUBES_INCLUDED

@@ -80,5 +80,5 @@ void cmdLineParse(int argc, char **argv,char** names,int num,cmdLineReadable** r
 				  int dumpError=1);
 
 char* GetFileExtension(char* fileName);
-
+#include "CmdLineParser.inl"
 #endif // CMD_LINE_PARSER_INCLUDED
